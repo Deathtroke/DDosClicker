@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
 
     public float manualRpS = 0f;
 
-    public Dictionary<devices, int> boughtDevices = new Dictionary<devices, int>();
+    public Dictionary<devices, int[]> boughtDevices = new Dictionary<devices, int[]>();
+
+
 
     private void FixedUpdate()
     {
@@ -47,11 +49,23 @@ public class GameManager : MonoBehaviour
     {
         if (boughtDevices.ContainsKey(device))
         {
-            boughtDevices[device] += amount;
+            boughtDevices[device][1] += amount;
         }
         else
         {
-            boughtDevices.Add(device, amount);
+            boughtDevices.Add(device, new int[]{ 0, amount});
+        }
+    }
+
+    public void BuyUpgrades(devices device, int amount = 1)
+    {
+        if (boughtDevices.ContainsKey(device))
+        {
+            boughtDevices[device][0] += amount;
+        }
+        else
+        {
+            boughtDevices.Add(device, new int[] { amount ,0});
         }
     }
 }
