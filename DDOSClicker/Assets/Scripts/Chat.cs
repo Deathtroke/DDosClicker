@@ -7,6 +7,10 @@ public class Chat : MonoBehaviour
 {
     public static Chat instance;
 
+    public GameObject chatWindow;
+
+    private bool isVisible = true;
+
     public GameObject chatMessagePrefab;
     public RectTransform chatView;
 
@@ -18,7 +22,7 @@ public class Chat : MonoBehaviour
     }
 
     private void Start()
-    {
+    {   
         // Test
         /*
         NewChat("Bernd", "Hallo?");
@@ -48,5 +52,17 @@ public class Chat : MonoBehaviour
             history.RemoveAt(0);
             Destroy(obj);
         }
+    }
+
+    public void OpenChat()
+    {
+        isVisible = true;
+        chatWindow.SetActive(true);
+    }
+
+    public void CloseChat()
+    {
+        isVisible = false;
+        chatWindow.SetActive(false);
     }
 }
