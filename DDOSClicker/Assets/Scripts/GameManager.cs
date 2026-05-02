@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<devices, int[]> boughtDevices = new Dictionary<devices, int[]>();
 
-
+    public float totalRpS => manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
 
     private void FixedUpdate()
     {
@@ -47,25 +48,41 @@ public class GameManager : MonoBehaviour
 
     public void BuyDevice(devices device, int amount = 1)
     {
-        if (boughtDevices.ContainsKey(device))
-        {
-            boughtDevices[device][1] += amount;
-        }
-        else
-        {
-            boughtDevices.Add(device, new int[]{ 0, amount});
-        }
-    }
-
-    public void BuyUpgrades(devices device, int amount = 1)
-    {
+        
+        if (EconomyManager.Instance.fame < EconomyManager.Instance.nextPuyPrice(device, amount)) return;
+        EconomyManager.Instance.fame -= EconomyManager.Instance.nextPuyPrice(device, amount);
         if (boughtDevices.ContainsKey(device))
         {
             boughtDevices[device][0] += amount;
         }
         else
         {
-            boughtDevices.Add(device, new int[] { amount ,0});
+            boughtDevices.Add(device, new int[]{ amount,0});
         }
+        Debug.Log(boughtDevices[device][0]);
+    }
+
+    public void BuyUpgrades(devices device, int amount = 1)
+    {
+        if (EconomyManager.Instance.fame < EconomyManager.Instance.nextUpgradePrice(device))
+        {
+            return;
+        }
+        if (boughtDevices.ContainsKey(device))
+        {
+            boughtDevices[device][1] += amount;
+        }
+        else
+        {
+            boughtDevices.Add(device, new int[] {0, amount});
+        }
+    }
+
+    public string bigNumber(int number)
+    {
+        string str = number.ToString();
+        int length = str.Length;
+        if (length < 5) return str;
+        return str[0] + "," + str[1..3] + "E" + --length;
     }
 }
