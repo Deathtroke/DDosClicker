@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class DisplayCpS : MonoBehaviour
+public class DisplayFame : MonoBehaviour
 {
     public TMP_Text label;
 
@@ -16,7 +16,7 @@ public class DisplayCpS : MonoBehaviour
     {
         if(label != null)
         {
-            label.text = "RpS" + GameManager.Instance.totalRpS;
+            label.text = "Fame: " + EconomyManager.Instance.fame;
         }
     }
 }
