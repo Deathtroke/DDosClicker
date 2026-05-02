@@ -11,6 +11,15 @@ public class GameManager : MonoBehaviour
     public enum devices { PC, Fridge, Server }
     public static GameManager Instance { get; private set; }
 
+    public List<Websites> levels = new List<Websites>();
+
+    public int currentLevelID = 0;
+    public int maxLevel = 0;
+
+    public Websites currentLevel => levels[currentLevelID];
+
+    public Dictionary<Websites, float> downWebsites = new Dictionary<Websites, float>();
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -42,6 +51,22 @@ public class GameManager : MonoBehaviour
             manualRpS = clicks.FindAll(x => x > lastCalc - 1).Count;
             clicks = clicks.FindAll(x => x > lastCalc - 1);
             lastCalc = Time.time;
+
+            if (!downWebsites.ContainsKey(currentLevel) || downWebsites[currentLevel] < Time.time)
+            {
+                if (totalRpS < currentLevel.capacity)
+                {
+                    EconomyManager.Instance.fame += (totalRpS / currentLevel.capacity) * currentLevel.passiveIncome * 0.2f;
+                }
+                else
+                {
+                    EconomyManager.Instance.fame += currentLevel.onDDoS;
+                    if (currentLevelID == maxLevel) maxLevel++;
+                    if (downWebsites.ContainsKey(currentLevel)) {
+                        downWebsites[currentLevel] = Time.time + 2;
+                    } else downWebsites.Add(currentLevel, Time.time + 2);
+                }
+            }
         }
 
     }
