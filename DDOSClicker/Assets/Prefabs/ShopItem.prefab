@@ -645,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c4f28674b8ea4448b402b0a32d08eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopItem
+  upgradeButton: {fileID: 3176072528914198844}
   image: {fileID: 1057007275245138643}
   title: {fileID: 28492351309699242}
   description: {fileID: 4463049358816142983}

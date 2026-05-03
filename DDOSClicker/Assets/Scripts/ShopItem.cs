@@ -5,6 +5,8 @@ using static GameManager;
 
 public class ShopItem : MonoBehaviour
 {
+    public Button upgradeButton;
+
     public Image image;
     public TMP_Text title;
     public TMP_Text description;
@@ -20,11 +22,13 @@ public class ShopItem : MonoBehaviour
         title.SetText(device.deviceName);
         description.SetText(device.description);
 
-        buyPriceText.SetText(device.startBuyPrice.ToString());
-        upgradePriceText.SetText(device.startUpgradePrice.ToString());
+        buyPriceText.SetText("Buy (" + device.startBuyPrice + ")");
+        upgradePriceText.SetText("Upgrade (" + device.startUpgradePrice + ")");
 
         deviceCountText.SetText("0");
         upgradeCountText.SetText("0/" + device.maxUpgrades);
+
+        upgradeButton.interactable = false;
 
         deviceType = device.device;
         this.device = device;
@@ -39,7 +43,13 @@ public class ShopItem : MonoBehaviour
             buyPriceText.SetText("Buy (" + GameManager.Instance.bigNumber(nextPrice) + ",-)");
         }
 
+        if(GameManager.Instance.boughtDevices[deviceType][0] == 1)
+        {
+            upgradeButton.interactable = true;
+        }
+
         deviceCountText.SetText(GameManager.Instance.boughtDevices[deviceType][0].ToString());
+
     }
 
     public void TryBuyUpgrade()
@@ -51,9 +61,15 @@ public class ShopItem : MonoBehaviour
             upgradePriceText.SetText("Upgrade (" + GameManager.Instance.bigNumber(nextPrice) + ",-)");
         }
 
-        upgradeCountText.SetText(Mathf.Min(device.maxUpgrades, GameManager.Instance.boughtDevices[deviceType][1]).ToString()
+        if (GameManager.Instance.boughtDevices[deviceType][1] >= device.maxUpgrades)
+        {
+            upgradeButton.interactable = false;
+            upgradePriceText.SetText("Upgrade MAX");
+        }
+
+        upgradeCountText.SetText(Mathf.Min(device.maxUpgrades, GameManager.Instance.boughtDevices[deviceType][1])
             + "/"
-            + GameManager.Instance.boughtDevices[deviceType][1]
+            + device.maxUpgrades
         );
     }
 }
