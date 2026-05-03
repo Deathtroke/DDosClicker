@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Rendering.Universal;
+using UnityEditor.Search;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
         Chat.instance.DeleteChatHistory();
         Chat.instance.NewChat(currentLevel.loadNames, currentLevel.loadChats);
+        currentLevel.lastCaptcha = 0;
     }
 
     public int maxLevel = 0;
@@ -93,12 +95,12 @@ public class GameManager : MonoBehaviour
                 if (currentLevel.lastCaptcha + currentLevel.captchaRate < Time.time)
                 {
                     currentLevel.lastCaptcha = Time.time;
-                    if (!captcha.gameObject.activeInHierarchy)
+                    if (!captcha.gameObject.activeInHierarchy && !websiteDown)
                     {
-                        captcha.gameObject.SetActive(true);
+                        captcha.InitializeNew();
                     }
                 }
-            }
+            }            
         }
     }
 

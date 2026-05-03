@@ -54,6 +54,10 @@ public class EconomyManager : MonoBehaviour
         if (!GameManager.Instance.boughtDevices.ContainsKey(device)) return 0;
         Device deviceData = Prices.FirstOrDefault(x => x.device == device);
         int amount = GameManager.Instance.boughtDevices[device][0];
+        if (GameManager.Instance.currentLevel.packageFilter > 0 && device == GameManager.Instance.boughtDevices.Keys.Last())
+        {
+            amount = math.clamp(amount - GameManager.Instance.currentLevel.packageFilter, 0, amount);
+        }
         int level = GameManager.Instance.boughtDevices[device][1];
 
         return math.clamp(deviceData.startRequestRate +deviceData.requestRateIncrease * level, 0, deviceData.maxRequestRate) * amount;

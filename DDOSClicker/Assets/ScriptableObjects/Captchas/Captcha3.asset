@@ -22,4 +22,4 @@ MonoBehaviour:
   option7: {fileID: 21300000, guid: a3762c4501a5ba0428252d1f44657aed, type: 3}
   option8: {fileID: 21300000, guid: afc5fd2404aa06345ba03d368e8c294f, type: 3}
   option9: {fileID: 21300000, guid: db3dd28631933c843886eeac7e457542, type: 3}
-  correctOptions: 010101000101010000
+  correctOptions: 010101010001010000
