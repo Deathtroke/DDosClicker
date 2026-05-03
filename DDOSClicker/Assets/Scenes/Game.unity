@@ -974,7 +974,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1532391507}
         m_TargetAssemblyTypeName: Chat, Assembly-CSharp
         m_MethodName: CloseChat
         m_Mode: 1
@@ -2276,7 +2276,7 @@ PrefabInstance:
       objectReference: {fileID: 30181475}
     - target: {fileID: 5719948971034258627, guid: 43f4eea3df741974da2774f8d2d7e4f2, type: 3}
       propertyPath: levels.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5719948971034258627, guid: 43f4eea3df741974da2774f8d2d7e4f2, type: 3}
       propertyPath: 'levels.Array.data[0]'
@@ -2294,6 +2294,10 @@ PrefabInstance:
       propertyPath: 'levels.Array.data[3]'
       value: 
       objectReference: {fileID: 11400000, guid: f37802dcf926d974795d0d2ec3c06e58, type: 2}
+    - target: {fileID: 5719948971034258627, guid: 43f4eea3df741974da2774f8d2d7e4f2, type: 3}
+      propertyPath: 'levels.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b2e44292c95697c488e3feec967d5010, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2520,7 +2524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money:'
+  m_text: 'Fame:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3371,7 +3375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1532391507}
         m_TargetAssemblyTypeName: Chat, Assembly-CSharp
         m_MethodName: OpenChat
         m_Mode: 1

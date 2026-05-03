@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
                     maxLevel++;
                     Chat.instance.DeleteChatHistory();
                     Chat.instance.NewChat(currentLevel.completeNames, currentLevel.completeChats);
-                    Chat.instance.NewChatLink(currentLevel.nameLinkToNextLevel, currentLevel.linkToNextLevel);
+                    Invoke(nameof(LinkForNewLevel), 6.5f);
                 }
                 if (downWebsites.ContainsKey(currentLevel)) {
                     downWebsites[currentLevel] = Time.time + 2;
@@ -100,6 +100,11 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void LinkForNewLevel()
+    {
+        Chat.instance.NewChatLink(currentLevel.nameLinkToNextLevel, currentLevel.linkToNextLevel);
     }
 
     public int BuyDevice(devices device, int amount = 1)

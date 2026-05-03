@@ -16,7 +16,7 @@ public class DisplayFame : MonoBehaviour
     {
         if(label != null)
         {
-            label.text = "Fame: " + (int)EconomyManager.Instance.fame;
+            label.text = ((int)EconomyManager.Instance.fame).ToString();
         }
     }
 }

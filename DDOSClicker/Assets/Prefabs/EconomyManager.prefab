@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9ea6064358b24429139df3f356f6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EconomyManager
+  fame: 1
   Prices:
   - {fileID: 11400000, guid: c423e516315865f4cb342cafe1527dec, type: 2}
   - {fileID: 11400000, guid: 0cf08a80bb4dd604bb4df725da8fc41b, type: 2}

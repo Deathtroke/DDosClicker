@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Server
   m_EditorClassIdentifier: Assembly-CSharp::PriceObject
   device: 2
-  startBuyPrice: 15
-  priceBuyIncrease: 2
+  startBuyPrice: 600
+  priceBuyIncrease: 10
   startUpgradePrice: 10
   priceUpgradeIncrease: 1.4
   image: {fileID: 21300000, guid: 71626eee033cc14478d3c69fae041edf, type: 3}
@@ -22,7 +22,7 @@ MonoBehaviour:
   description: Server farms can reach from small buildings stacked up with hard drives
     and CPUs to entire underground complexes. You can only imagine how they many
     request one could send with one of these.
-  startRequestRate: 10
-  requestRateIncrease: 5
+  startRequestRate: 100
+  requestRateIncrease: 30
   maxRequestRate: 1000
   maxUpgrades: 98

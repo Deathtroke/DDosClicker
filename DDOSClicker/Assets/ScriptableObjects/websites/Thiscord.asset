@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Websites
   websiteName: Thiscord
   capacity: 45
-  passiveIncome: 5
-  onDDoS: 150
+  passiveIncome: 10
+  onDDoS: 200
   WebsiteUp: {fileID: 21300000, guid: aedc6d78e24110d45b45d5ca7d462f8c, type: 3}
   WebsiteDown: {fileID: 21300000, guid: 54c331bff0ecd494995cf19dbe01dc2e, type: 3}
   captchaRate: 0
@@ -32,15 +32,16 @@ MonoBehaviour:
   - +4914124200085 ~ fanny
   - +4914124200085 ~ fanny
   - +4914124200085 ~ fanny
+  - +4914124200085 ~ fanny
   completeChats:
   - "Hi, it\u2019s Fanny from the 9C. Franco is the younger brother of my best friend.
     He told me you shut his internet down with a DDoS attack and he wanted to call
     the police about that."
-  - "Don\u2019t worry I got him off of that, but maybe you can help me. Our neighbour
-    is a local politician and he has this blog where he spreads fake news about the
-    youth center and that it only attracts homeless people. But that\u2019s not true
-    - I hang there everyday with my friends and everyone\u2019s nice. Can you take
-    it down?"
+  - "Don\u2019t worry I got him off of that, but maybe you can help me."
+  - "Our neighbour is a local politician and he has this blog where he spreads fake
+    news about the youth center and that it only attracts homeless people. But that\u2019s
+    not true - I hang there everyday with my friends and everyone\u2019s nice. Can
+    you take it down?"
   - I swear I will tell no one it was you.
   nameLinkToNextLevel: +4914124200085 ~ fanny
   linkToNextLevel: LINK TO WEBSITE

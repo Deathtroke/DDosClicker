@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Websites
   websiteName: Friedolin Scherz Blog
   capacity: 400
-  passiveIncome: 20
+  passiveIncome: 60
   onDDoS: 900
   WebsiteUp: {fileID: 21300000, guid: 02c3db52b92489c429600dd201144167, type: 3}
   WebsiteDown: {fileID: 21300000, guid: 2a565b46309b4bb48946f5450c6b201d, type: 3}
   captchaRate: 30
-  lastCaptcha: 0
+  lastCaptcha: 142.43996
   packageFilter: 0
   rateLimiting: 0
   loadNames:

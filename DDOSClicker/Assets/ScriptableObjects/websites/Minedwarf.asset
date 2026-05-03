@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Websites
   websiteName: Minedwarf
   capacity: 6
-  passiveIncome: 2
-  onDDoS: 20
+  passiveIncome: 5
+  onDDoS: 50
   WebsiteUp: {fileID: 21300000, guid: 7963694b96078834789e9ef428fe42ac, type: 3}
   WebsiteDown: {fileID: 21300000, guid: d1881f06cae7d9046965f126a365e6ac, type: 3}
   captchaRate: 0

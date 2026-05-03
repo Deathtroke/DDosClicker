@@ -11,7 +11,7 @@ public class EconomyManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public static EconomyManager Instance { get; private set; }
 
-    public float fame = 10000;
+    public float fame = 1;
 
     private void Awake()
     {
@@ -27,17 +27,7 @@ public class EconomyManager : MonoBehaviour
         }
     }
 
-
-
     public List<Device> Prices = new List<Device>();
-
-
-
-    private void FixedUpdate()
-    {
- 
-
-    }
 
     public int nextPuyPrice(devices device, int amount = 1)
     {
