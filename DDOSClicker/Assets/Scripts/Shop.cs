@@ -11,25 +11,47 @@ public class Shop : MonoBehaviour
 
     private bool isVisible = false;
 
-    // public GameObject chatMessagePrefab;
-    // public RectTransform chatView;
+    public GameObject shopItemPrefab;
+    public RectTransform shopView;
+
+    public Device[] testDevices;
 
     private void Awake()
     {
         instance = this;
     }
 
-    /*
-    public void NewChat(string name, string message)
+    private void Start()
     {
-        GameObject chat = Instantiate(chatMessagePrefab);
-
-        chat.transform.SetParent(chatView, false);
-        chat.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-
-        chat.GetComponent<ChatMessage>().SetChatMessage(name, message);
+        // Test
+        foreach (var device in testDevices)
+        {
+            if (device != null)
+            {
+                AddShopItem(device);
+            }
+        }
     }
-    */
+
+
+    public void AddShopItem(Device device)
+    {
+        GameObject deviceItem = Instantiate(shopItemPrefab);
+
+        deviceItem.transform.SetParent(shopView, false);
+        deviceItem.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+        deviceItem.GetComponent<ShopItem>().SetShopItem(device, true); // true means device as device
+
+        //--// wheeeeeouh!!
+
+        GameObject upgradeItem = Instantiate(shopItemPrefab);
+
+        upgradeItem.transform.SetParent(shopView, false);
+        upgradeItem.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+        upgradeItem.GetComponent<ShopItem>().SetShopItem(device, false); // false meanse device as upgrade (of device)
+    }
 
     public void OpenShop()
     {

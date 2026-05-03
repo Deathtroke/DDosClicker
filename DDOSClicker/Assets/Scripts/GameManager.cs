@@ -71,10 +71,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void BuyDevice(devices device, int amount = 1)
+    public int BuyDevice(devices device, int amount = 1)
     {
         
-        if (EconomyManager.Instance.fame < EconomyManager.Instance.nextPuyPrice(device, amount)) return;
+        if (EconomyManager.Instance.fame < EconomyManager.Instance.nextPuyPrice(device, amount)) return -1;
         EconomyManager.Instance.fame -= EconomyManager.Instance.nextPuyPrice(device, amount);
         if (boughtDevices.ContainsKey(device))
         {
@@ -85,13 +85,15 @@ public class GameManager : MonoBehaviour
             boughtDevices.Add(device, new int[]{ amount,0});
         }
         Debug.Log(boughtDevices[device][0]);
+
+        return EconomyManager.Instance.nextPuyPrice(device);
     }
 
-    public void BuyUpgrades(devices device, int amount = 1)
+    public int BuyUpgrades(devices device, int amount = 1)
     {
         if (EconomyManager.Instance.fame < EconomyManager.Instance.nextUpgradePrice(device))
         {
-            return;
+            return -1;
         }
         if (boughtDevices.ContainsKey(device))
         {
@@ -101,6 +103,8 @@ public class GameManager : MonoBehaviour
         {
             boughtDevices.Add(device, new int[] {0, amount});
         }
+
+        return EconomyManager.Instance.nextUpgradePrice(device);
     }
 
     public string bigNumber(int number)

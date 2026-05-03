@@ -11,7 +11,13 @@ public class Device : ScriptableObject
     public float startUpgradePrice;
     public float priceUpgradeIncrease;
 
-    Sprite image;
+    public Sprite deviceImage;
+    public string deviceName;
+    public string deviceDescription;
+
+    public Sprite upgradeImage;
+    public string upgradeName;
+    public string upgradeDescription;
 
     public float startRequestRate;
     public float requestRateIncrease;

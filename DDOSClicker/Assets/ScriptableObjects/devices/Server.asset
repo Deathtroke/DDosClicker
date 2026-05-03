@@ -17,6 +17,12 @@ MonoBehaviour:
   priceBuyIncrease: 2
   startUpgradePrice: 10
   priceUpgradeIncrease: 1.4
+  deviceImage: {fileID: 0}
+  deviceName: Server
+  deviceDescription: Sinvoler text
+  upgradeImage: {fileID: 0}
+  upgradeName: erver Upgrade
+  upgradeDescription: Okay, ich geh jetzt wirklich in sbEtt.
   startRequestRate: 10
   requestRateIncrease: 5
   maxRequestRate: 1000

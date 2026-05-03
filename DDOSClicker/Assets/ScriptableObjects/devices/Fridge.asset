@@ -17,6 +17,12 @@ MonoBehaviour:
   priceBuyIncrease: 2
   startUpgradePrice: 3
   priceUpgradeIncrease: 1.4
+  deviceImage: {fileID: 0}
+  deviceName: Hey Sharona!
+  deviceDescription: bllbl
+  upgradeImage: {fileID: 0}
+  upgradeName: Fridge Upgrade
+  upgradeDescription: Yeah
   startRequestRate: 1
   requestRateIncrease: 0.5
   maxRequestRate: 10
