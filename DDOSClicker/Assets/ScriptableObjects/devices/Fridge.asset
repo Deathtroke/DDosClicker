@@ -17,12 +17,11 @@ MonoBehaviour:
   priceBuyIncrease: 2
   startUpgradePrice: 3
   priceUpgradeIncrease: 1.4
-  deviceImage: {fileID: 0}
-  deviceName: Hey Sharona!
-  deviceDescription: bllbl
-  upgradeImage: {fileID: 0}
-  upgradeName: Fridge Upgrade
-  upgradeDescription: Yeah
+  image: {fileID: 21300000, guid: 32b3757e6644dc74a9109507c4eb7ae0, type: 3}
+  deviceName: Smart Device
+  description: It doesn't matter which device you take over to send additional requests.
+    Even fridges, toasters and printers have WLAN today and can ping any website.
   startRequestRate: 1
   requestRateIncrease: 0.5
   maxRequestRate: 10
+  maxUpgrades: 18

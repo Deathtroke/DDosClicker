@@ -17,12 +17,11 @@ MonoBehaviour:
   priceBuyIncrease: 2
   startUpgradePrice: 10
   priceUpgradeIncrease: 1.4
-  deviceImage: {fileID: 0}
-  deviceName: Test
-  deviceDescription: "Ich bin ein Gummib\xE4r."
-  upgradeImage: {fileID: 0}
-  upgradeName: What is my age again?
-  upgradeDescription: 23
+  image: {fileID: 0}
+  deviceName: PC
+  description: 'Modern computers are incredibly powerful and can be utilized to send
+    a maximum amount of requests. '
   startRequestRate: 5
   requestRateIncrease: 2
   maxRequestRate: 100
+  maxUpgrades: 48

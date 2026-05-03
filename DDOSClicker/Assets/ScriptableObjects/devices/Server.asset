@@ -17,12 +17,12 @@ MonoBehaviour:
   priceBuyIncrease: 2
   startUpgradePrice: 10
   priceUpgradeIncrease: 1.4
-  deviceImage: {fileID: 0}
+  image: {fileID: 0}
   deviceName: Server
-  deviceDescription: Sinvoler text
-  upgradeImage: {fileID: 0}
-  upgradeName: erver Upgrade
-  upgradeDescription: Okay, ich geh jetzt wirklich in sbEtt.
+  description: Server farms can reach from small buildings stacked up with hard drives
+    and CPUs to entire underground complexes. You can only imagine how they many
+    request one could send with one of these.
   startRequestRate: 10
   requestRateIncrease: 5
   maxRequestRate: 1000
+  maxUpgrades: 98

@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static GameManager;
@@ -9,65 +8,52 @@ public class ShopItem : MonoBehaviour
     public Image image;
     public TMP_Text title;
     public TMP_Text description;
-    public TMP_Text priceText;
-    public TMP_Text youGotCountText;
+    public TMP_Text buyPriceText, upgradePriceText;
+    public TMP_Text deviceCountText, upgradeCountText;
 
-    private devices device;
-    bool isDevice = true;
+    private devices deviceType;
+    private Device device;
 
-    public void SetShopItem(Device device, bool asDevice)
+    public void SetShopItem(Device device)
     {
-        if(asDevice)
-        {
-            image.sprite = device.deviceImage;
-            title.SetText(device.deviceName);
-            description.SetText(device.deviceDescription);
-        }
-        else
-        {
-            image.sprite = device.upgradeImage;
-            title.SetText(device.upgradeName);
-            description.SetText(device.upgradeDescription);
-        }
+        image.sprite = device.image;
+        title.SetText(device.deviceName);
+        description.SetText(device.description);
 
-        if (asDevice)
-        {
-            priceText.SetText(device.startBuyPrice.ToString());
-        }
-        else
-        {
-            priceText.SetText(device.startUpgradePrice.ToString());
-        }
+        buyPriceText.SetText(device.startBuyPrice.ToString());
+        upgradePriceText.SetText(device.startUpgradePrice.ToString());
 
-        this.device = device.device;
-        isDevice = asDevice;
+        deviceCountText.SetText("0");
+        upgradeCountText.SetText("0/" + device.maxUpgrades);
 
-        youGotCountText.SetText("0");
+        deviceType = device.device;
+        this.device = device;
     }
 
-    public void TryBuyItem()
+    public void TryBuyDevice()
     {
-        if (isDevice)
+        int nextPrice = GameManager.Instance.BuyDevice(deviceType);
+
+        if (nextPrice > 0)
         {
-            int nextPrice = GameManager.Instance.BuyDevice(device);
-
-            if (nextPrice > 0)
-            {
-                priceText.text = nextPrice.ToString();
-            }
-
-            youGotCountText.text = GameManager.Instance.boughtDevices[device][0].ToString();
+            buyPriceText.SetText("Buy (" + GameManager.Instance.bigNumber(nextPrice) + ",-)");
         }
-        else
+
+        deviceCountText.SetText(GameManager.Instance.boughtDevices[deviceType][0].ToString());
+    }
+
+    public void TryBuyUpgrade()
+    {
+        int nextPrice = GameManager.Instance.BuyUpgrades(deviceType);
+
+        if (nextPrice > 0)
         {
-            int nextPrice = GameManager.Instance.BuyUpgrades(device);
-
-            if (nextPrice > 0)
-            {
-                priceText.text = nextPrice.ToString();
-            }
-
-            youGotCountText.text = GameManager.Instance.boughtDevices[device][1].ToString();
+            upgradePriceText.SetText("Upgrade (" + GameManager.Instance.bigNumber(nextPrice) + ",-)");
         }
+
+        upgradeCountText.SetText(Mathf.Min(device.maxUpgrades, GameManager.Instance.boughtDevices[deviceType][1]).ToString()
+            + "/"
+            + GameManager.Instance.boughtDevices[deviceType][1]
+        );
     }
 }

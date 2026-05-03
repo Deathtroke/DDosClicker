@@ -23,16 +23,16 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        // Test
-        foreach (var device in testDevices)
+        for (int i = testDevices.Length - 1; i >= 0; i--)
         {
+            Device device = testDevices[i];
+
             if (device != null)
             {
                 AddShopItem(device);
             }
         }
     }
-
 
     public void AddShopItem(Device device)
     {
@@ -41,16 +41,7 @@ public class Shop : MonoBehaviour
         deviceItem.transform.SetParent(shopView, false);
         deviceItem.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
 
-        deviceItem.GetComponent<ShopItem>().SetShopItem(device, true); // true means device as device
-
-        //--// wheeeeeouh!!
-
-        GameObject upgradeItem = Instantiate(shopItemPrefab);
-
-        upgradeItem.transform.SetParent(shopView, false);
-        upgradeItem.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-
-        upgradeItem.GetComponent<ShopItem>().SetShopItem(device, false); // false meanse device as upgrade (of device)
+        deviceItem.GetComponent<ShopItem>().SetShopItem(device);
     }
 
     public void OpenShop()
