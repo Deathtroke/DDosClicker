@@ -213,6 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CaptchaInstance
   possibleCaptchas:
   - {fileID: 11400000, guid: f0773b1f912d46444b0d147e420946c5, type: 2}
+  - {fileID: 11400000, guid: 8b1c679d9927f8841936ff63ea04ca17, type: 2}
+  - {fileID: 11400000, guid: 8a25ea101a9717d45b727b48789d2258, type: 2}
   captcha: {fileID: 0}
   option1: {fileID: 8584749665125803275}
   option2: {fileID: 5385461449117873016}

@@ -46,7 +46,8 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<devices, int[]> boughtDevices = new Dictionary<devices, int[]>();
 
-    public float totalRpS => captchaUp ? 0: manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
+    public bool websiteDown => (downWebsites.ContainsKey(currentLevel));// && downWebsites[currentLevel] >= Time.time);
+    public float totalRpS => captchaUp || websiteDown ? 0: manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
 
     private void FixedUpdate()
     {
@@ -56,22 +57,25 @@ public class GameManager : MonoBehaviour
             clicks = clicks.FindAll(x => x > lastCalc - 1);
             lastCalc = Time.time;
 
-            if ((!downWebsites.ContainsKey(currentLevel) || downWebsites[currentLevel] < Time.time)
-                )
+
+            if ((totalRpS < currentLevel.capacity))
             {
-                if (totalRpS < currentLevel.capacity)
-                {
-                    EconomyManager.Instance.fame += (totalRpS / currentLevel.capacity) * currentLevel.passiveIncome * 0.2f;
-                }
-                else
-                {
-                    EconomyManager.Instance.fame += currentLevel.onDDoS;
-                    if (currentLevelID == maxLevel) maxLevel++;
-                    if (downWebsites.ContainsKey(currentLevel)) {
-                        downWebsites[currentLevel] = Time.time + 2;
-                    } else downWebsites.Add(currentLevel, Time.time + 2);
-                }
+                EconomyManager.Instance.fame += (totalRpS / currentLevel.capacity) * currentLevel.passiveIncome * 0.2f;
             }
+            else
+            {
+                EconomyManager.Instance.fame += currentLevel.onDDoS;
+                if (currentLevelID == maxLevel) { 
+                    maxLevel++;
+                    Chat.instance.NewChat("a", "b");
+
+                }
+                if (downWebsites.ContainsKey(currentLevel)) {
+                    downWebsites[currentLevel] = Time.time + 2;
+                } else downWebsites.Add(currentLevel, Time.time + 2);
+
+            }
+            
 
             if (captcha != null && currentLevel.captchaRate != 0)
             {
@@ -109,10 +113,8 @@ public class GameManager : MonoBehaviour
 
     public int BuyUpgrades(devices device, int amount = 1)
     {
-        if (EconomyManager.Instance.fame < EconomyManager.Instance.nextUpgradePrice(device))
-        {
-            return -1;
-        }
+        if (EconomyManager.Instance.fame < EconomyManager.Instance.nextUpgradePrice(device, amount)) return -1;
+        EconomyManager.Instance.fame -= EconomyManager.Instance.nextUpgradePrice(device, amount);
         if (boughtDevices.ContainsKey(device))
         {
             boughtDevices[device][1] += amount;

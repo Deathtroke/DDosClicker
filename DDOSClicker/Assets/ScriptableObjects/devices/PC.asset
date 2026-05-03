@@ -17,7 +17,7 @@ MonoBehaviour:
   priceBuyIncrease: 2
   startUpgradePrice: 10
   priceUpgradeIncrease: 1.4
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: f1f74d76ef7e73d499c74cc5b2cee72f, type: 3}
   deviceName: PC
   description: 'Modern computers are incredibly powerful and can be utilized to send
     a maximum amount of requests. '

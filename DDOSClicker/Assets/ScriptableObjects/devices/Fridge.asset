@@ -17,7 +17,7 @@ MonoBehaviour:
   priceBuyIncrease: 2
   startUpgradePrice: 3
   priceUpgradeIncrease: 1.4
-  image: {fileID: 21300000, guid: 32b3757e6644dc74a9109507c4eb7ae0, type: 3}
+  image: {fileID: 21300000, guid: fd0653485a025f3419c68075cc0723a0, type: 3}
   deviceName: Smart Device
   description: It doesn't matter which device you take over to send additional requests.
     Even fridges, toasters and printers have WLAN today and can ping any website.
