@@ -1462,8 +1462,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chat
   chatWindow: {fileID: 640720030}
-  chatMessagePrefab: {fileID: 1225475198}
-  chatView: {fileID: 1499210486585966290, guid: a175707b237372c4192cf2b7f449b854, type: 3}
+  chatMessagePrefab: {fileID: 820949291675980878, guid: a175707b237372c4192cf2b7f449b854, type: 3}
+  chatMessageLinkPrefab: {fileID: 7950417987838782906, guid: e5dadedc57cfa3e42a70b8246afc1240, type: 3}
+  chatView: {fileID: 1225475199}
 --- !u!1 &675857073
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,13 @@ public class Websites : ScriptableObject
     public float captchaRate;
     [ReadOnly] public float lastCaptcha = 0;
     public int packageFilter;
-    public float rateLimiting; 
+    public float rateLimiting;
 
+    public string nameLoadChat;
+    public string contentLoadChat;
+
+    public string nameCompleteChat;
+    public string contentCompleteChat;
+
+    public string linkToNextLevel;
 }

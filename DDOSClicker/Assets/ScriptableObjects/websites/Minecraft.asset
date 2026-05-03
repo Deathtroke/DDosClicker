@@ -22,3 +22,8 @@ MonoBehaviour:
   lastCaptcha: 0
   packageFilter: 0
   rateLimiting: 0
+  nameLoadChat: Bob
+  contentLoadChat: haha
+  nameCompleteChat: Bob
+  contentCompleteChat: noooo
+  linkToNextLevel: http://127.0.0.1:8080

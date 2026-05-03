@@ -12,6 +12,8 @@ public class Chat : MonoBehaviour
     private bool isVisible = true;
 
     public GameObject chatMessagePrefab;
+    public GameObject chatMessageLinkPrefab;
+
     public RectTransform chatView;
 
     private List<GameObject> history = new();
@@ -24,6 +26,18 @@ public class Chat : MonoBehaviour
     public void NewChat(string name, string message)
     {
         GameObject chat = Instantiate(chatMessagePrefab);
+
+        chat.transform.SetParent(chatView, false);
+        chat.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+        chat.GetComponent<ChatMessage>().SetChatMessage(name, message);
+
+        history.Add(chat);
+    }
+
+    public void NewChatLink(string name, string message)
+    {
+        GameObject chat = Instantiate(chatMessageLinkPrefab);
 
         chat.transform.SetParent(chatView, false);
         chat.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);

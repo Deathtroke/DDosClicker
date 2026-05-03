@@ -13,7 +13,13 @@ public class GameManager : MonoBehaviour
 
     public List<Websites> levels = new List<Websites>();
 
-    public int currentLevelID = 0;
+    public int currentLevelID  = 0;
+    public void NextLevel()
+    {
+        currentLevelID++;
+        Chat.instance.NewChat(currentLevel.nameLoadChat, currentLevel.contentLoadChat);
+    }
+
     public int maxLevel = 0;
 
     public Websites currentLevel => levels[currentLevelID];
@@ -24,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public bool captchaUp => captcha ? captcha.gameObject.activeInHierarchy: false;
 
-    private void Awake()
+    private void Start()
     {
         // If there is an instance, and it's not me, delete myself.
 
@@ -37,6 +43,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         lastCalc = Time.time;
+        Chat.instance.NewChat(currentLevel.nameLoadChat, currentLevel.contentLoadChat);
+
     }
 
     public List<float> clicks = new List<float>();
@@ -67,8 +75,8 @@ public class GameManager : MonoBehaviour
                 EconomyManager.Instance.fame += currentLevel.onDDoS;
                 if (currentLevelID == maxLevel) { 
                     maxLevel++;
-                    Chat.instance.NewChat("a", "b");
-
+                    Chat.instance.NewChat(currentLevel.nameCompleteChat, currentLevel.contentCompleteChat);
+                    Chat.instance.NewChatLink(currentLevel.nameCompleteChat, currentLevel.linkToNextLevel);
                 }
                 if (downWebsites.ContainsKey(currentLevel)) {
                     downWebsites[currentLevel] = Time.time + 2;

@@ -11,4 +11,13 @@ public class ChatMessage : MonoBehaviour
         nameText.SetText(name);
         messageText.SetText(message);
     }
+
+    public bool clickedOnce = false;
+
+    public void click()
+    {
+        if (!clickedOnce)
+            GameManager.Instance.NextLevel();
+        clickedOnce = true;
+    }
 }
