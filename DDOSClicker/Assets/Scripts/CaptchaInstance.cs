@@ -75,6 +75,7 @@ public class CaptchaInstance : MonoBehaviour
         option9.gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
         caption.text = captcha.caption;
+        gameObject.SetActive(true);
     }
 
     // Update is called once per frame
