@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         currentLevelID++;
-        Chat.instance.NewChat(currentLevel.nameLoadChat, currentLevel.contentLoadChat);
+
+        Chat.instance.NewChat(currentLevel.loadNames, currentLevel.loadChats);
     }
 
     public int maxLevel = 0;
@@ -33,7 +34,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // If there is an instance, and it's not me, delete myself.
-
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -42,9 +42,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        lastCalc = Time.time;
-        Chat.instance.NewChat(currentLevel.nameLoadChat, currentLevel.contentLoadChat);
 
+        lastCalc = Time.time;
+
+        Chat.instance.NewChat(currentLevel.loadNames, currentLevel.loadChats);
     }
 
     public List<float> clicks = new List<float>();
@@ -75,8 +76,8 @@ public class GameManager : MonoBehaviour
                 EconomyManager.Instance.fame += currentLevel.onDDoS;
                 if (currentLevelID == maxLevel) { 
                     maxLevel++;
-                    Chat.instance.NewChat(currentLevel.nameCompleteChat, currentLevel.contentCompleteChat);
-                    Chat.instance.NewChatLink(currentLevel.nameCompleteChat, currentLevel.linkToNextLevel);
+                    Chat.instance.NewChat(currentLevel.completeNames, currentLevel.completeChats);
+                    Chat.instance.NewChatLink(currentLevel.nameLinkToNextLevel, currentLevel.linkToNextLevel);
                 }
                 if (downWebsites.ContainsKey(currentLevel)) {
                     downWebsites[currentLevel] = Time.time + 2;
@@ -93,17 +94,14 @@ public class GameManager : MonoBehaviour
                     if (!captcha.gameObject.activeInHierarchy)
                     {
                         captcha.gameObject.SetActive(true);
-                        
                     }
                 }
             }
         }
-
     }
 
     public int BuyDevice(devices device, int amount = 1)
     {
-        
         if (EconomyManager.Instance.fame < EconomyManager.Instance.nextPuyPrice(device, amount)) return -1;
         EconomyManager.Instance.fame -= EconomyManager.Instance.nextPuyPrice(device, amount);
         if (boughtDevices.ContainsKey(device))

@@ -10,20 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8887b7812c78f47429b607c1a450796d, type: 3}
-  m_Name: Minecraft
+  m_Name: Minedwarf
   m_EditorClassIdentifier: Assembly-CSharp::Websites
-  webisteName: Minnekraft Server
+  websiteName: Minedwarf
   capacity: 6
-  passiveIncome: 0
-  onDDoS: 5
+  passiveIncome: 2
+  onDDoS: 20
   WebsiteUp: {fileID: 21300000, guid: 7963694b96078834789e9ef428fe42ac, type: 3}
   WebsiteDown: {fileID: 21300000, guid: d1881f06cae7d9046965f126a365e6ac, type: 3}
   captchaRate: 0
   lastCaptcha: 0
   packageFilter: 0
   rateLimiting: 0
-  nameLoadChat: Bob
-  contentLoadChat: haha
-  nameCompleteChat: Bob
-  contentCompleteChat: noooo
-  linkToNextLevel: http://127.0.0.1:8080
+  loadNames:
+  - Franco (Computer Club)
+  loadChats:
+  - Haha, I banned you from the server! What are you gonna do about that?
+  completeNames:
+  - Oswald (Computer Club)
+  completeChats:
+  - Hey, what you did with the Minedwarf server yesterday. I researched a bit and
+    you can actually shut down his whole internet if you send enough requests per
+    second to the router.
+  nameLinkToNextLevel: Oswald (Computer Club)
+  linkToNextLevel: CLICK TO JOIN CALL

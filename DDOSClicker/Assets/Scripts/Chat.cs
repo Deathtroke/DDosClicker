@@ -35,6 +35,11 @@ public class Chat : MonoBehaviour
         history.Add(chat);
     }
 
+    public void NewChat(string[] names, string[] messages)
+    {
+        // TODO
+    }
+
     public void NewChatLink(string name, string message)
     {
         GameObject chat = Instantiate(chatMessageLinkPrefab);

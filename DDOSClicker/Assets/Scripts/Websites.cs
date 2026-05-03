@@ -6,7 +6,7 @@ using static GameManager;
 [CreateAssetMenu(fileName ="Data", menuName ="ScriptableObjects/Websites")]
 public class Websites : ScriptableObject
 {
-    public string webisteName;
+    public string websiteName;
     public float capacity;
     public float passiveIncome;
     public float onDDoS;
@@ -15,15 +15,18 @@ public class Websites : ScriptableObject
     public Sprite WebsiteDown;
 
     public float captchaRate;
+    
     [ReadOnly] public float lastCaptcha = 0;
+    
     public int packageFilter;
     public float rateLimiting;
 
-    public string nameLoadChat;
-    public string contentLoadChat;
+    public string[] loadNames;
+    public string[] loadChats;
 
-    public string nameCompleteChat;
-    public string contentCompleteChat;
+    public string[] completeNames;
+    public string[] completeChats;
 
+    public string nameLinkToNextLevel;
     public string linkToNextLevel;
 }
