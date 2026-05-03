@@ -21,17 +21,6 @@ public class Chat : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {   
-        // Test
-        /*
-        NewChat("Bernd", "Hallo?");
-        NewChat("Dirk", "Ich bin auch dabei. Ach ne, das war ja Uwe. Wer bin ich? Wie bin ich hierhergekommen?");
-        NewChat("Bernd", "Hey Dirk, was geht?");
-        NewChat("Dirk", "Hallo?");
-        */
-    }
-
     public void NewChat(string name, string message)
     {
         GameObject chat = Instantiate(chatMessagePrefab);
