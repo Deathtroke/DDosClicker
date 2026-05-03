@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,7 +42,17 @@ public class Chat : MonoBehaviour
 
     public void NewChat(string[] names, string[] messages)
     {
-        // TODO
+        StartCoroutine(SendBunchOfChats(names, messages));
+    }
+
+    public IEnumerator SendBunchOfChats(string[] names, string[] messages)
+    {
+        for(int i = 0; i < names.Length; i++)
+        {
+            NewChat(names[i], messages[i]);
+
+            yield return new WaitForSeconds(Random.Range(1f, 2f));
+        }
     }
 
     public void NewChatLink(string name, string message)

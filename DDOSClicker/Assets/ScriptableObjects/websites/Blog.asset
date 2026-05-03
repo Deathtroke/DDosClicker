@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8887b7812c78f47429b607c1a450796d, type: 3}
+  m_Name: Blog
+  m_EditorClassIdentifier: Assembly-CSharp::Websites
+  websiteName: Friedolin Scherz Blog
+  capacity: 400
+  passiveIncome: 20
+  onDDoS: 900
+  WebsiteUp: {fileID: 21300000, guid: 02c3db52b92489c429600dd201144167, type: 3}
+  WebsiteDown: {fileID: 21300000, guid: 2a565b46309b4bb48946f5450c6b201d, type: 3}
+  captchaRate: 30
+  lastCaptcha: 0
+  packageFilter: 0
+  rateLimiting: 0
+  loadNames:
+  - +4914124200085 ~ fanny
+  - Note from the author
+  loadChats:
+  - This site has Captchas. They are used to verify a request as human before it
+    gets processed. You will have to make a bunch of these.
+  - Actually, to get automated requests through Captchas, you will have to hire real
+    people for it or train machine learning algorithms to solve the Captchas.
+  completeNames:
+  - Markus (Student)
+  - Markus (Student)
+  - Markus (Student)
+  completeChats:
+  - "Hello Mister, I heard of your local success with DDoS - Fanny told me. She also
+    told me she shouldn\u2019t actually tell me. Well\u2026 "
+  - "I\u2019m a student from Leimig University and programmed a website with a well
+    established method for blocking DDoS attacks and I need someone to test it and
+    collect data. Would you mind trying to DDoS this website which I\u2019ve set
+    up?"
+  - "I programmed it so you can\u2019t destroy anything - it\u2019s just for testing
+    purposes."
+  nameLinkToNextLevel: Markus (Student)
+  linkToNextLevel: LINK TO WEBSITE

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         currentLevelID++;
 
+        Chat.instance.DeleteChatHistory();
         Chat.instance.NewChat(currentLevel.loadNames, currentLevel.loadChats);
     }
 
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
                 EconomyManager.Instance.fame += currentLevel.onDDoS;
                 if (currentLevelID == maxLevel) { 
                     maxLevel++;
+                    Chat.instance.DeleteChatHistory();
                     Chat.instance.NewChat(currentLevel.completeNames, currentLevel.completeChats);
                     Chat.instance.NewChatLink(currentLevel.nameLinkToNextLevel, currentLevel.linkToNextLevel);
                 }
