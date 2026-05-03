@@ -17,4 +17,9 @@ MonoBehaviour:
   option2: {fileID: 0}
   option3: {fileID: 21300000, guid: 213a38db7087a364fba4b978715ab3f5, type: 3}
   option4: {fileID: 0}
-  correctOptions: 01000100
+  option5: {fileID: 0}
+  option6: {fileID: 0}
+  option7: {fileID: 0}
+  option8: {fileID: 0}
+  option9: {fileID: 0}
+  correctOptions: 010001000000000000

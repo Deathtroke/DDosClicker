@@ -1,3 +1,4 @@
+using Unity.Collections;
 using UnityEditor.Hardware;
 using UnityEngine;
 using static GameManager;
@@ -9,5 +10,13 @@ public class Websites : ScriptableObject
     public float capacity;
     public float passiveIncome;
     public float onDDoS;
+
+    public Sprite WebsiteUp;
+    public Sprite WebsiteDown;
+
+    public float captchaRate;
+    [ReadOnly] public float lastCaptcha = 0;
+    public int packageFilter;
+    public float rateLimiting; 
 
 }

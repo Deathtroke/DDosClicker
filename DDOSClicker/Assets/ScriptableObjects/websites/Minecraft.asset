@@ -16,3 +16,9 @@ MonoBehaviour:
   capacity: 6
   passiveIncome: 0
   onDDoS: 5
+  WebsiteUp: {fileID: 0}
+  WebsiteDown: {fileID: 0}
+  captchaRate: 0
+  lastCaptcha: 0
+  packageFilter: 0
+  rateLimiting: 0

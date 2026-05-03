@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<Websites, float> downWebsites = new Dictionary<Websites, float>();
 
+    public CaptchaInstance captcha;
+
+    public bool captchaUp => captcha ? captcha.gameObject.activeInHierarchy: false;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -42,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<devices, int[]> boughtDevices = new Dictionary<devices, int[]>();
 
-    public float totalRpS => manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
+    public float totalRpS => captchaUp ? 0: manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
 
     private void FixedUpdate()
     {
@@ -52,7 +56,8 @@ public class GameManager : MonoBehaviour
             clicks = clicks.FindAll(x => x > lastCalc - 1);
             lastCalc = Time.time;
 
-            if (!downWebsites.ContainsKey(currentLevel) || downWebsites[currentLevel] < Time.time)
+            if ((!downWebsites.ContainsKey(currentLevel) || downWebsites[currentLevel] < Time.time)
+                )
             {
                 if (totalRpS < currentLevel.capacity)
                 {
@@ -65,6 +70,19 @@ public class GameManager : MonoBehaviour
                     if (downWebsites.ContainsKey(currentLevel)) {
                         downWebsites[currentLevel] = Time.time + 2;
                     } else downWebsites.Add(currentLevel, Time.time + 2);
+                }
+            }
+
+            if (captcha != null && currentLevel.captchaRate != 0)
+            {
+                if (currentLevel.lastCaptcha + currentLevel.captchaRate < Time.time)
+                {
+                    currentLevel.lastCaptcha = Time.time;
+                    if (!captcha.gameObject.activeInHierarchy)
+                    {
+                        captcha.gameObject.SetActive(true);
+                        
+                    }
                 }
             }
         }
