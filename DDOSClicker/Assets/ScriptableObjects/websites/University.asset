@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8887b7812c78f47429b607c1a450796d, type: 3}
+  m_Name: University
+  m_EditorClassIdentifier: Assembly-CSharp::Websites
+  websiteName: Science Project Site
+  capacity: 2000
+  passiveIncome: 100
+  onDDoS: 2500
+  WebsiteUp: {fileID: 21300000, guid: 38d23d104323a0748896aec106449e69, type: 3}
+  WebsiteDown: {fileID: 21300000, guid: 286a06c96da28bb429b980ca38eb15f3, type: 3}
+  captchaRate: 30
+  lastCaptcha: 0
+  packageFilter: 2
+  rateLimiting: 0
+  loadNames:
+  - Markus (Student)
+  - Note from the author
+  loadChats:
+  - "This site is using a package filter. You know what it does? Basically it will
+    block a certain device by its IP if it doesn\u2019t fit predefined parameters."
+  - For the sake of this game the package filter will block some of your strongest
+    devices (that send the most requests). You can bypass the filter by having more
+    devices instead of fewer ones, because the filter can only block a limited amount
+    of devices.
+  completeNames:
+  - Markus (Student)
+  - Markus (Student)
+  - Markus (Student)
+  completeChats:
+  - "Hello Mister, I heard of your local success with DDoS - Fanny told me. She also
+    told me she shouldn\u2019t actually tell me. Well\u2026 "
+  - "I\u2019m a student from Leimig University and programmed a website with a well
+    established method for blocking DDoS attacks and I need someone to test it and
+    collect data. Would you mind trying to DDoS this website which I\u2019ve set
+    up?"
+  - "I programmed it so you can\u2019t destroy anything - it\u2019s just for testing
+    purposes."
+  nameLinkToNextLevel: Markus (Student)
+  linkToNextLevel: LINK TO WEBSITE
