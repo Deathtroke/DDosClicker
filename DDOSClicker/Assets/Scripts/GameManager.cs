@@ -46,7 +46,8 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<devices, int[]> boughtDevices = new Dictionary<devices, int[]>();
 
-    public float totalRpS => captchaUp && (!downWebsites.ContainsKey(currentLevel) || downWebsites[currentLevel] < Time.time) ? 0: manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
+    public bool websiteDown => (downWebsites.ContainsKey(currentLevel));// && downWebsites[currentLevel] >= Time.time);
+    public float totalRpS => captchaUp || websiteDown ? 0: manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
 
     private void FixedUpdate()
     {
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
             lastCalc = Time.time;
 
 
-            if (totalRpS < currentLevel.capacity)
+            if ((totalRpS < currentLevel.capacity))
             {
                 EconomyManager.Instance.fame += (totalRpS / currentLevel.capacity) * currentLevel.passiveIncome * 0.2f;
             }
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
                 if (downWebsites.ContainsKey(currentLevel)) {
                     downWebsites[currentLevel] = Time.time + 2;
                 } else downWebsites.Add(currentLevel, Time.time + 2);
+
             }
             
 

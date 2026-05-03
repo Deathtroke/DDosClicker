@@ -4056,6 +4056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbeb53b9ced3d147bd66afff0118822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Click
+  siteImage: {fileID: 2006659307}
 --- !u!114 &2006659310
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ef46a92558a8c489828aef535b0483, type: 3}
   m_Name: Captcha1
   m_EditorClassIdentifier: Assembly-CSharp::CaptchaData
-  caption: Select shop
-  option1: {fileID: 21300000, guid: 213a38db7087a364fba4b978715ab3f5, type: 3}
-  option2: {fileID: 0}
-  option3: {fileID: 21300000, guid: 213a38db7087a364fba4b978715ab3f5, type: 3}
-  option4: {fileID: 0}
-  option5: {fileID: 0}
-  option6: {fileID: 0}
-  option7: {fileID: 0}
-  option8: {fileID: 0}
-  option9: {fileID: 0}
-  correctOptions: 010001000000000000
+  caption: Select stars
+  option1: {fileID: 21300000, guid: e1609a25c1ccf754c9bad5b0b3c5bebd, type: 3}
+  option2: {fileID: 21300000, guid: 0f717f0554de05a4598aef30fb0eb658, type: 3}
+  option3: {fileID: 21300000, guid: d2b17cca5900df74ea39e72517dce836, type: 3}
+  option4: {fileID: 21300000, guid: 47cd3c1f8f3c19e4aa7d914c64c3ecb4, type: 3}
+  option5: {fileID: 21300000, guid: 3f3baeb2cfe7dff4eaa735e9f7c07803, type: 3}
+  option6: {fileID: 21300000, guid: e75953c3311dbb14081d15304c316c7b, type: 3}
+  option7: {fileID: 21300000, guid: 18f87b86e2da61d48a89cd83bfdb068a, type: 3}
+  option8: {fileID: 21300000, guid: b9b7c815de92ab34d99c1b9bc87c539e, type: 3}
+  option9: {fileID: 21300000, guid: 24a47284b3c8a5d47b5c7ecbf50e80dd, type: 3}
+  correctOptions: 010001010101000101

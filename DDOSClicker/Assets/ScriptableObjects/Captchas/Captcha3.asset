@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ef46a92558a8c489828aef535b0483, type: 3}
+  m_Name: Captcha3
+  m_EditorClassIdentifier: Assembly-CSharp::CaptchaData
+  caption: Select green dots
+  option1: {fileID: 21300000, guid: d314f79b36815b44aa8e37f0ad8df0ea, type: 3}
+  option2: {fileID: 21300000, guid: 05ef4d93d6cda4c40877e40c095aa80f, type: 3}
+  option3: {fileID: 21300000, guid: 7d07391923a450e478d5ddeaa7ea5722, type: 3}
+  option4: {fileID: 21300000, guid: 1c62ea2f11b05234f8c1bc48228efee7, type: 3}
+  option5: {fileID: 21300000, guid: 0eee043ee28b9c04a9f8bb558862dc06, type: 3}
+  option6: {fileID: 21300000, guid: 647c0f7dc1f0d93439809eda11ef51f1, type: 3}
+  option7: {fileID: 21300000, guid: a3762c4501a5ba0428252d1f44657aed, type: 3}
+  option8: {fileID: 21300000, guid: afc5fd2404aa06345ba03d368e8c294f, type: 3}
+  option9: {fileID: 21300000, guid: db3dd28631933c843886eeac7e457542, type: 3}
+  correctOptions: 010101000101010000
