@@ -17,7 +17,7 @@ MonoBehaviour:
   priceBuyIncrease: 2
   startUpgradePrice: 10
   priceUpgradeIncrease: 1.4
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 71626eee033cc14478d3c69fae041edf, type: 3}
   deviceName: Server
   description: Server farms can reach from small buildings stacked up with hard drives
     and CPUs to entire underground complexes. You can only imagine how they many

@@ -65,7 +65,11 @@ public class GameManager : MonoBehaviour
             else
             {
                 EconomyManager.Instance.fame += currentLevel.onDDoS;
-                if (currentLevelID == maxLevel) maxLevel++;
+                if (currentLevelID == maxLevel) { 
+                    maxLevel++;
+                    Chat.instance.NewChat("a", "b");
+
+                }
                 if (downWebsites.ContainsKey(currentLevel)) {
                     downWebsites[currentLevel] = Time.time + 2;
                 } else downWebsites.Add(currentLevel, Time.time + 2);
