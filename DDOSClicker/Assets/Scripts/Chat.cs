@@ -18,6 +18,8 @@ public class Chat : MonoBehaviour
 
     private List<GameObject> history = new();
 
+    public AudioSource chatAudioSource;
+
     private void Awake()
     {
         instance = this;
@@ -33,6 +35,8 @@ public class Chat : MonoBehaviour
         chat.GetComponent<ChatMessage>().SetChatMessage(name, message);
 
         history.Add(chat);
+
+        chatAudioSource.Play();
     }
 
     public void NewChat(string[] names, string[] messages)
@@ -50,6 +54,8 @@ public class Chat : MonoBehaviour
         chat.GetComponent<ChatMessage>().SetChatMessage(name, message);
 
         history.Add(chat);
+        chatAudioSource.Play();
+
     }
 
     public void DeleteChatHistory()
