@@ -18,7 +18,7 @@ public class DisplayCpS : MonoBehaviour
     {
         if(label != null)
         {
-            label.text = "RpS" + GameManager.Instance.totalRpS;
+            label.text = GameManager.Instance.totalRpS + " Requests / Sec.";
         }
         if (slider != null)
         {
