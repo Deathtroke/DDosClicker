@@ -16,8 +16,8 @@ MonoBehaviour:
   capacity: 5000
   passiveIncome: 600
   onDDoS: 10000
-  WebsiteUp: {fileID: 21300000, guid: 38d23d104323a0748896aec106449e69, type: 3}
-  WebsiteDown: {fileID: 21300000, guid: 286a06c96da28bb429b980ca38eb15f3, type: 3}
+  WebsiteUp: {fileID: 21300000, guid: 7c542c6dd42dc6d4092df7c736454c2c, type: 3}
+  WebsiteDown: {fileID: 21300000, guid: cbef5d85572eb6a4f8f20be8c760d171, type: 3}
   captchaRate: 30
   lastCaptcha: 0
   packageFilter: 5
