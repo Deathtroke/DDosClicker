@@ -2777,6 +2777,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2975654377669758877, guid: 9ffc0a539f0494d458d3c0242b326500, type: 3}
+      propertyPath: Prices.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975654377669758877, guid: 9ffc0a539f0494d458d3c0242b326500, type: 3}
+      propertyPath: 'Prices.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: dcbbbaa47e18feb4cb5dee4243b13d4c, type: 2}
     - target: {fileID: 4341844533873068490, guid: 9ffc0a539f0494d458d3c0242b326500, type: 3}
       propertyPath: m_Name
       value: EconomyManager
@@ -4013,11 +4021,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chat
   shopWindow: {fileID: 1627602508}
   shopItemPrefab: {fileID: 3525926108767721045, guid: 2c61d3f6d5780944ab0d182abce1ecf6, type: 3}
+  shopItemPrefabUpgrade: {fileID: 6164962203540718164, guid: 9e4941d693b5b9c4898a80689e69d9d1, type: 3}
   shopView: {fileID: 928087291}
   testDevices:
   - {fileID: 11400000, guid: c423e516315865f4cb342cafe1527dec, type: 2}
   - {fileID: 11400000, guid: 0cf08a80bb4dd604bb4df725da8fc41b, type: 2}
   - {fileID: 11400000, guid: 6cc3ff9a57ec72447bfc09fb763b59c0, type: 2}
+  - {fileID: 11400000, guid: dcbbbaa47e18feb4cb5dee4243b13d4c, type: 2}
 --- !u!1 &1739104504
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public enum devices { PC, Fridge, Server }
+    public enum devices { PC, Fridge, Server, Spoofing }
     public static GameManager Instance { get; private set; }
 
     public List<Websites> levels = new List<Websites>();
@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
     public Dictionary<devices, int[]> boughtDevices = new Dictionary<devices, int[]>();
 
     public bool websiteDown => (downWebsites.ContainsKey(currentLevel));// && downWebsites[currentLevel] >= Time.time);
-    public float totalRpS => captchaUp || websiteDown ? 0: manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
+    public int spoofingMuliplyer => boughtDevices.ContainsKey(devices.Spoofing) ? boughtDevices[devices.Spoofing][1] + 1 : 1;
+    public float totalRpS => Mathf.Clamp(captchaUp || websiteDown ? 0 : manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x)), 0, currentLevel.rateLimiting != 0 ? currentLevel.rateLimiting * spoofingMuliplyer : float.MaxValue);
 
     private void FixedUpdate()
     {

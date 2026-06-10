@@ -12,6 +12,7 @@ public class Shop : MonoBehaviour
     private bool isVisible = false;
 
     public GameObject shopItemPrefab;
+    public GameObject shopItemPrefabUpgrade;
     public RectTransform shopView;
 
     public Device[] testDevices;
@@ -36,12 +37,14 @@ public class Shop : MonoBehaviour
 
     public void AddShopItem(Device device)
     {
-        GameObject deviceItem = Instantiate(shopItemPrefab);
+
+        GameObject deviceItem = Instantiate(device is DeviceUpgrade? shopItemPrefabUpgrade : shopItemPrefab);
 
         deviceItem.transform.SetParent(shopView, false);
         deviceItem.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
 
         deviceItem.GetComponent<ShopItem>().SetShopItem(device);
+
     }
 
     public void OpenShop()

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a059f5494e65543b9fd1eafdf5c598, type: 3}
+  m_Name: Spoofing
+  m_EditorClassIdentifier: Assembly-CSharp::DeviceUpgrade
+  device: 3
+  startBuyPrice: 0
+  priceBuyIncrease: 0
+  startUpgradePrice: 1000
+  priceUpgradeIncrease: 1.4
+  image: {fileID: 21300000, guid: 9ad87b6eb6986a64eb8663f70f6760ca, type: 3}
+  deviceName: IP Spoofing
+  description: spoofs ip's
+  startRequestRate: 0
+  requestRateIncrease: 0
+  maxRequestRate: 0
+  maxUpgrades: 10
