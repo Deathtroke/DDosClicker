@@ -28,7 +28,7 @@ public class ShopItem : MonoBehaviour
         deviceCountText.SetText("0");
         upgradeCountText.SetText("0/" + device.maxUpgrades);
 
-        upgradeButton.interactable = false;
+        upgradeButton.interactable = device is DeviceUpgrade;
 
         deviceType = device.device;
         this.device = device;
@@ -61,12 +61,13 @@ public class ShopItem : MonoBehaviour
             upgradePriceText.SetText("Upgrade (" + GameManager.Instance.bigNumber(nextPrice) + ",-)");
         }
 
-        if (GameManager.Instance.boughtDevices[deviceType][1] >= device.maxUpgrades)
+        if (GameManager.Instance.boughtDevices.ContainsKey(deviceType) && GameManager.Instance.boughtDevices[deviceType][1] >= device.maxUpgrades)
         {
             upgradeButton.interactable = false;
             upgradePriceText.SetText("Upgrade MAX");
         }
 
+        if (GameManager.Instance.boughtDevices.ContainsKey(deviceType))
         upgradeCountText.SetText(Mathf.Min(device.maxUpgrades, GameManager.Instance.boughtDevices[deviceType][1])
             + "/"
             + device.maxUpgrades

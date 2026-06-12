@@ -56,8 +56,8 @@ public class GameManager : MonoBehaviour
     public Dictionary<devices, int[]> boughtDevices = new Dictionary<devices, int[]>();
 
     public bool websiteDown => (downWebsites.ContainsKey(currentLevel));// && downWebsites[currentLevel] >= Time.time);
-    public int spoofingMuliplyer => boughtDevices.ContainsKey(devices.Spoofing) ? boughtDevices[devices.Spoofing][1] + 1 : 1;
-    public float totalRpS => Mathf.Clamp(captchaUp || websiteDown ? 0 : manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x)), 0, currentLevel.rateLimiting != 0 ? currentLevel.rateLimiting * spoofingMuliplyer : float.MaxValue);
+    public int spoofingMuliplyer => boughtDevices.ContainsKey(devices.Spoofing) ? boughtDevices[devices.Spoofing][1] :0;
+    public float totalRpS => captchaUp || websiteDown ? 0 : manualRpS + boughtDevices.Keys.Sum(x => EconomyManager.Instance.getRequestRate(x));
 
     private void FixedUpdate()
     {

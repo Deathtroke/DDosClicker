@@ -58,7 +58,7 @@ public class EconomyManager : MonoBehaviour
         }
         int level = GameManager.Instance.boughtDevices[device][1];
 
-        return math.clamp(deviceData.startRequestRate +deviceData.requestRateIncrease * level, 0, deviceData.maxRequestRate) * amount;
+        return math.clamp(math.clamp(deviceData.startRequestRate +deviceData.requestRateIncrease * level, 0, deviceData.maxRequestRate) * amount, 0, GameManager.Instance.currentLevel.rateLimiting != 0 ? GameManager.Instance.currentLevel.rateLimiting * Mathf.Pow(2, GameManager.Instance.spoofingMuliplyer) : float.MaxValue); ;
 
     }
 }
