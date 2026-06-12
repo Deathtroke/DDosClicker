@@ -16,10 +16,12 @@ MonoBehaviour:
   startBuyPrice: 0
   priceBuyIncrease: 0
   startUpgradePrice: 1000
-  priceUpgradeIncrease: 1.4
+  priceUpgradeIncrease: 1.5
   image: {fileID: 21300000, guid: 9ad87b6eb6986a64eb8663f70f6760ca, type: 3}
   deviceName: IP Spoofing
-  description: spoofs ip's
+  description: With IP spoofing, you pretend that requests are coming from devices
+    other than your own. This allows you to simulate a large number of different
+    devices without them actually existing.
   startRequestRate: 0
   requestRateIncrease: 0
   maxRequestRate: 0
